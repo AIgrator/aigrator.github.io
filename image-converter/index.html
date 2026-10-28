@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter — форматы, размер и GIF для Android | AIgrator</title>
+    <meta name="description" content="Image Converter для Android: PNG, JPEG, WEBP, HEIC, AVIF, изменение размера, водяные знаки, GIF и PDF. Бесплатно в Google Play.">
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+    <script src="../assets/theme.js"></script>
+    <script src="../assets/i18n.js"></script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141311'/%3E%3Cpath d='M18 46 30 16h6l12 30h-7l-2.4-6.5H27L24.5 46H18Zm11-12h7l-3.5-9.5L29 34Z' fill='%23f4f1ea'/%3E%3Ccircle cx='49' cy='15' r='5' fill='%23ff4d00'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../assets/android-app.css">
+    <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body id="top" style="--accent: light-dark(#5b21b6, #c4b5fd); --accent-soft: light-dark(#ede9fe, #251f38);">
+
+    <header class="ap-header">
+        <div class="container ap-header-inner">
+            <a class="logo" href="../index.html" title="AIgrator — на главную">AIgrator<span>.</span></a>
+            <nav class="ap-nav" aria-label="Основная навигация">
+                <a href="../index.html#android" title="Все приложения AIgrator для Android">Все приложения</a>
+                <a class="nav-play" href="https://play.google.com/store/apps/details?id=com.aigrator.universalimageconverter&amp;hl=ru" target="_blank" rel="noopener" title="Image Converter в Google Play">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5Z"/></svg>
+                    Google Play
+                </a>
+                <label class="theme-switch" title="Тема оформления: системная, светлая или тёмная">
+                    <span class="visually-hidden">Тема оформления</span>
+                    <svg class="theme-icon theme-icon-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+                    <select class="theme-select" data-theme-select aria-label="Тема оформления">
+                        <option value="system">Системная</option>
+                        <option value="light">Светлая</option>
+                        <option value="dark">Тёмная</option>
+                    </select>
+                    <svg class="theme-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </label>
+                <label class="theme-switch lang-switch" title="Язык сайта">
+                    <span class="visually-hidden">Язык сайта</span>
+                    <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>
+                    <select class="theme-select lang-select" data-lang-select aria-label="Язык сайта">
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                    </select>
+                    <svg class="theme-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </label>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="ap-hero" aria-labelledby="app-title">
+            <div class="container">
+                <nav class="ap-crumbs" aria-label="Хлебные крошки">
+                    <a href="../index.html" title="На главную AIgrator">AIgrator</a>
+                    <span class="sep" aria-hidden="true">/</span>
+                    <a href="../index.html#android" title="Приложения для Android">Android</a>
+                    <span class="sep" aria-hidden="true">/</span>
+                    <span aria-current="page">Image Converter</span>
+                </nav>
+
+                <div class="ap-hero-grid">
+                    <div class="ap-hero-copy">
+                        <p class="ap-kicker">Android · Изображения</p>
+                        <div class="ap-title-row">
+                            <span class="ap-app-icon"><img src="../assets/icons/android/image-converter.png" alt="" width="128" height="128" fetchpriority="high" decoding="async"></span>
+                            <div>
+                                <h1 id="app-title">Image Converter</h1>
+                                <p class="ap-tagline">Форматы, размер, водяные знаки и GIF — все инструменты для изображений.</p>
+                            </div>
+                        </div>
+                        <p class="ap-desc">Image Converter принимает PNG, JPEG, WEBP, BMP, GIF, TIFF, HEIC/HEIF и AVIF, меняет размер и качество, добавляет водяные знаки, собирает GIF и PDF. Пакетная обработка — до 100 файлов за раз.</p>
+                        <ul class="ap-facts">
+                            <li class="fact-platform"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.2 9.2h11.6c.6 0 1.1.5 1.1 1.1v6.2c0 .6-.5 1.1-1.1 1.1H6.2c-.6 0-1.1-.5-1.1-1.1v-6.2c0-.6.5-1.1 1.1-1.1Zm.1-3.4 1-1.8a.4.4 0 0 1 .7.4l-.9 1.6a5.9 5.9 0 0 1 5.8 0l-.9-1.6a.4.4 0 1 1 .7-.4l1 1.8A6.4 6.4 0 0 1 17.4 9H6.6a6.4 6.4 0 0 1 3.3-2.9l-.4-.3ZM9 7.2a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Zm6 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Z"/><path d="M3.2 10.1c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0v-4.6c0-.6.4-1 1-1Zm17.6 0c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0v-4.6c0-.6.4-1 1-1ZM7 18.2h10v2.3a1 1 0 1 1-2 0v-2.3h-1.5v2.3a1 1 0 1 1-2 0v-2.3h-1v2.3a1 1 0 1 1-2 0v-2.3H7Z"/></svg>Android</li>
+                            <li>Фотография</li>
+                            <li>3+</li>
+                            <li>Бесплатно</li>
+                            <li class="fact-offline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H7a4 4 0 0 1-.7-7.94A6 6 0 0 1 17 9.5a4.5 4.5 0 0 1 .5 9.5Z"/><path d="m3 3 18 18"/></svg>Офлайн</li>
+                        </ul>
+                        <div class="ap-actions">
+                            <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.aigrator.universalimageconverter&amp;hl=ru" target="_blank" rel="noopener" title="Скачать Image Converter в Google Play">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="play-mark" d="M8 5v14l11-7L8 5Z"/></svg>
+                                Скачать в Google Play
+                            </a>
+                            <a class="btn-text" href="../index.html#android" title="Вернуться к списку Android-приложений">
+                                Все приложения
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                            </a>
+                        </div>
+                        <p class="ap-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Бесплатно с рекламой. Разовая покупка в приложении отключает её навсегда.</p>
+                    </div>
+
+                    <figure class="ap-hero-visual">
+                        <span class="ap-visual-chip">Экран приложения</span>
+                        <div class="phone">
+                            <img src="../assets/screenshots/android/image-converter/1.webp" alt="Image Converter: Главный экран и выбор изображений" width="540" height="1200" decoding="async">
+                        </div>
+                        <figcaption class="ap-visual-caption">Главный экран Image Converter</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="ap-section" aria-labelledby="features-title">
+            <div class="container">
+                <div class="ap-section-head">
+                    <div>
+                        <p class="ap-section-label">Возможности</p>
+                        <h2 id="features-title">Что умеет Image Converter</h2>
+                    </div>
+                    <p class="ap-section-side">По описанию в Google Play</p>
+                </div>
+                <div class="ap-features">
+                    <article class="ap-feature">
+                        <span class="ap-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-4.5-4.5L8 20"/></svg></span>
+                        <h3>8 форматов на вход</h3>
+                        <p>PNG, JPEG, WEBP, BMP, GIF, TIFF, HEIC/HEIF и AVIF.</p>
+                    </article>
+                    <article class="ap-feature">
+                        <span class="ap-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a8 8 0 0 1 13.5-3.5L21 9"/><path d="M21 4v5h-5"/><path d="M20 15a8 8 0 0 1-13.5 3.5L3 15"/><path d="M3 20v-5h5"/></svg></span>
+                        <h3>9 форматов на выход</h3>
+                        <p>Все входные плюс ICO — с настройкой качества.</p>
+                    </article>
+                    <article class="ap-feature">
+                        <span class="ap-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span>
+                        <h3>Точный размер</h3>
+                        <p>Проценты, пиксели и фильтры — с сохранением пропорций.</p>
+                    </article>
+                    <article class="ap-feature">
+                        <span class="ap-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg></span>
+                        <h3>Водяные знаки</h3>
+                        <p>Девять позиций, готовые пресеты и настройка прозрачности.</p>
+                    </article>
+                    <article class="ap-feature">
+                        <span class="ap-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span>
+                        <h3>GIF из фото</h3>
+                        <p>Задержка 100–2000 мс, 2–256 цветов и прозрачность.</p>
+                    </article>
+                    <article class="ap-feature">
+                        <span class="ap-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></span>
+                        <h3>PDF и пакет</h3>
+                        <p>Собирайте PDF из изображений и обрабатывайте до 100 файлов сразу.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="ap-section" aria-labelledby="gallery-title">
+            <div class="container">
+                <div class="ap-section-head">
+                    <div>
+                        <p class="ap-section-label">Интерфейс</p>
+                        <h2 id="gallery-title">Как это выглядит</h2>
+                    </div>
+                    <p class="ap-section-side">Реальные экраны приложения</p>
+                </div>
+                <div class="ap-gallery">
+                    <figure class="ap-shot">
+                        <div class="ap-shot-frame"><img src="../assets/screenshots/android/image-converter/1.webp" alt="Image Converter: Главный экран и выбор изображений" width="540" height="1200" loading="lazy" decoding="async"></div>
+                        <figcaption><span>01</span>Главный экран и выбор изображений</figcaption>
+                    </figure>
+                    <figure class="ap-shot">
+                        <div class="ap-shot-frame"><img src="../assets/screenshots/android/image-converter/2.webp" alt="Image Converter: Формат и качество результата" width="540" height="1200" loading="lazy" decoding="async"></div>
+                        <figcaption><span>02</span>Формат и качество результата</figcaption>
+                    </figure>
+                    <figure class="ap-shot">
+                        <div class="ap-shot-frame"><img src="../assets/screenshots/android/image-converter/3.webp" alt="Image Converter: Изменение размера в пикселях" width="540" height="1200" loading="lazy" decoding="async"></div>
+                        <figcaption><span>03</span>Изменение размера в пикселях</figcaption>
+                    </figure>
+                    <figure class="ap-shot">
+                        <div class="ap-shot-frame"><img src="../assets/screenshots/android/image-converter/4.webp" alt="Image Converter: Галерея готовых файлов" width="540" height="1200" loading="lazy" decoding="async"></div>
+                        <figcaption><span>04</span>Галерея готовых файлов</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="ap-section" aria-labelledby="data-title">
+            <div class="container">
+                <div class="ap-section-head">
+                    <div>
+                        <p class="ap-section-label">Данные и реклама</p>
+                        <h2 id="data-title">Что важно знать</h2>
+                    </div>
+                    <p class="ap-section-side">До установки</p>
+                </div>
+                <div class="ap-info-grid">
+                    <article class="ap-info-card">
+                        <span class="ap-info-tag">Приватность</span>
+                        <h3>Изображения остаются на устройстве</h3>
+                        <p>Конвертация, изменение размера и водяные знаки выполняются локально. Файлы не загружаются в облако.</p>
+                        <ul>
+                            <li>Без регистрации</li>
+                            <li>Работает офлайн</li>
+                            <li>До 100 файлов в пакете</li>
+                        </ul>
+                    </article>
+                    <article class="ap-info-card ap-info-dark">
+                        <span class="ap-info-tag">Реклама</span>
+                        <h3>Бесплатно, с рекламой</h3>
+                        <p>В приложении показывается реклама. Разовая покупка отключает её навсегда — подписок нет.</p>
+                        <ul>
+                            <li>Разовая покупка, не подписка</li>
+                            <li>Реклама отключается навсегда</li>
+                        </ul>
+                    </article>
+                </div>
+                <table class="ap-specs">
+                    <caption class="visually-hidden">Характеристики Image Converter</caption>
+                    <tbody>
+                        <tr><th scope="row">Платформа</th><td>Android</td></tr>
+                        <tr><th scope="row">Категория</th><td>Фотография</td></tr>
+                        <tr><th scope="row">Возрастной рейтинг</th><td>3+</td></tr>
+                        <tr><th scope="row">Цена</th><td>Бесплатно</td></tr>
+                        <tr><th scope="row">Реклама</th><td>Есть; отключается разовой покупкой</td></tr>
+                        <tr><th scope="row">Покупки</th><td>Разовая покупка «без рекламы»</td></tr>
+                        <tr><th scope="row">Интернет</th><td>Не требуется</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="ap-cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="ap-cta-inner">
+                    <div>
+                        <p class="ap-cta-label">Google Play</p>
+                        <h2 id="cta-title">Попробуйте Image Converter</h2>
+                        <p>Бесплатно · Android · 3+ · До 100 файлов в пакете</p>
+                    </div>
+                    <a class="btn btn-green" href="https://play.google.com/store/apps/details?id=com.aigrator.universalimageconverter&amp;hl=ru" target="_blank" rel="noopener" title="Скачать Image Converter в Google Play">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path class="play-mark" d="M8 5v14l11-7L8 5Z"/></svg>
+                        Скачать в Google Play
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ap-other" aria-labelledby="other-title">
+            <div class="container">
+                <div class="ap-other-head">
+                    <p class="ap-section-label" id="other-title">Ещё на Android</p>
+                    <a class="ap-other-all" href="../index.html#android" title="Все Android-приложения AIgrator">
+                        Все приложения
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                    </a>
+                </div>
+                <div class="ap-other-grid">
+                    <a class="ap-other-item" href="../pdf-converter/index.html" title="Открыть PDF Converter">
+                        <img src="../assets/icons/android/pdf-converter.png" alt="" width="128" height="128" loading="lazy" decoding="async">
+                        <span>PDF Converter</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                    </a>
+                    <a class="ap-other-item" href="../video-converter/index.html" title="Открыть Video Converter">
+                        <img src="../assets/icons/android/video-converter.png" alt="" width="128" height="128" loading="lazy" decoding="async">
+                        <span>Video Converter</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                    </a>
+                    <a class="ap-other-item" href="../unit-converter/index.html" title="Открыть Unit Converter">
+                        <img src="../assets/icons/android/unit-converter.png" alt="" width="128" height="128" loading="lazy" decoding="async">
+                        <span>Unit Converter</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                    </a>
+                    <a class="ap-other-item" href="../ar-ruler/index.html" title="Открыть AR Ruler">
+                        <img src="../assets/icons/android/ar-ruler.png" alt="" width="128" height="128" loading="lazy" decoding="async">
+                        <span>AR Ruler</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ap-footer">
+        <div class="container ap-footer-inner">
+            <div class="ap-footer-brand">
+                <span class="ap-footer-logo">AIgrator<span>.</span></span>
+                <span class="ap-footer-copy">&copy; 2026 AIgrator. Все права защищены.</span>
+            </div>
+            <div class="ap-footer-links">
+                <a href="https://github.com/AIgrator" target="_blank" rel="noopener" title="AIgrator на GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.39-5.26 5.68.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.aigrator.universalimageconverter&amp;hl=ru" target="_blank" rel="noopener" title="Image Converter в Google Play">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5Z"/></svg>
+                    Google Play
+                </a>
+                <a href="../index.html#android" title="Все Android-приложения">Все приложения</a>
+                <a href="#top" title="Вернуться наверх">Наверх &uarr;</a>
+                <label class="theme-switch" title="Тема оформления: системная, светлая или тёмная">
+                    <span class="visually-hidden">Тема оформления</span>
+                    <svg class="theme-icon theme-icon-system" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+                    <select class="theme-select" data-theme-select aria-label="Тема оформления">
+                        <option value="system">Системная</option>
+                        <option value="light">Светлая</option>
+                        <option value="dark">Тёмная</option>
+                    </select>
+                    <svg class="theme-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </label>
+                <label class="theme-switch lang-switch" title="Язык сайта">
+                    <span class="visually-hidden">Язык сайта</span>
+                    <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>
+                    <select class="theme-select lang-select" data-lang-select aria-label="Язык сайта">
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                    </select>
+                    <svg class="theme-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </label>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
