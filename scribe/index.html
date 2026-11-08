@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scribe — офлайн-диктовка и голосовые команды для Windows | AIgrator</title>
-    <meta name="description" content="Scribe для Windows: офлайн-распознавание речи Vosk, голосовые команды, запуск программ, замены и горячие клавиши. Портативный exe, бесплатно, MIT.">
+    <meta name="description" content="Scribe для Windows 10/11: офлайн-распознавание речи Vosk, автоматическая пунктуация и заглавные буквы, голосовые команды, замены и горячие клавиши. Портативный exe, бесплатно, MIT.">
     <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
     <script src="../assets/theme.js"></script>
@@ -67,13 +67,13 @@
                             <span class="ap-app-icon"><img src="../assets/icons/scribe.png" alt="" width="128" height="128" fetchpriority="high" decoding="async"></span>
                             <div>
                                 <h1 id="app-title">Scribe</h1>
-                                <p class="ap-tagline">Голосовой ввод и команды — речь обрабатывается на компьютере.</p>
+                                <p class="ap-tagline">Диктовка с пунктуацией и голосовые команды — речь обрабатывается на компьютере.</p>
                             </div>
                         </div>
                         <p class="ap-desc">Scribe превращает компьютер в устройство с голосовым управлением: диктуйте текст в любое приложение, запускайте программы и автоматизируйте рутину. Распознавание Vosk работает офлайн, без отправки речи в облако.</p>
                         <ul class="ap-facts">
-                            <li class="fact-platform"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>Windows 7 / 10 / 11</li>
-                            <li>Версия 1.3.0</li>
+                            <li class="fact-platform"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>Windows 10 / 11 (64-bit)</li>
+                            <li>Версия 1.3.1</li>
                             <li class="fact-offline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>Офлайн</li>
                             <li>MIT</li>
                         </ul>
@@ -87,7 +87,7 @@
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                             </a>
                         </div>
-                        <p class="ap-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Портативная сборка ≈ 93 МБ: установка не требуется. Языковые модели Vosk скачиваются отдельно.</p>
+                        <p class="ap-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Портативная сборка ≈ 93 МБ: установка не требуется. Языковые модели Vosk и модели пунктуации скачиваются отдельно.</p>
                     </div>
 
                     <figure class="ap-hero-visual">
@@ -210,6 +210,49 @@
             </div>
         </section>
 
+        <section class="ap-section" aria-labelledby="punct-title">
+            <div class="container">
+                <div class="ap-section-head">
+                    <div>
+                        <p class="ap-section-label">Пунктуация</p>
+                        <h2 id="punct-title">Знаки препинания и заглавные буквы</h2>
+                    </div>
+                    <p class="ap-section-side">Офлайн</p>
+                </div>
+                <p class="ap-section-lead">Scribe сам расставляет знаки препинания и восстанавливает заглавные буквы в готовом тексте — офлайн, на компьютере. Функция включена по умолчанию, переключатель — на вкладке «Модели».</p>
+                <div class="ap-methods">
+                    <article class="ap-method">
+                        <div class="ap-method-head">
+                            <span class="ap-method-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h11"/><path d="M4 17h14"/></svg></span>
+                            <h3>Русский и английский</h3>
+                            <span class="ap-method-badge">Нейросеть</span>
+                        </div>
+                        <p>Компактная офлайн-модель расставляет точки, запятые, вопросительный и восклицательный знаки, двоеточие и многоточие, а также возвращает заглавные буквы.</p>
+                        <ul>
+                            <li>Модель скачивается автоматически при первом запуске</li>
+                            <li>После загрузки работает без интернета</li>
+                            <li>Без модели остаются базовые правила</li>
+                        </ul>
+                    </article>
+                    <article class="ap-method">
+                        <div class="ap-method-head">
+                            <span class="ap-method-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg></span>
+                            <h3>Остальные языки</h3>
+                        </div>
+                        <p>Базовые правила без модели: заглавная буква в начале предложения после точки, вопросительного или восклицательного знака.</p>
+                        <ul>
+                            <li>Работает сразу после установки</li>
+                            <li>Свои знаки можно вставлять голосом через замены</li>
+                        </ul>
+                    </article>
+                </div>
+                <p class="ap-methods-note">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+                    Пауза — не конец предложения: на короткой заминке Scribe не ставит точку и не начинает новое предложение. Границей служат вопросительный и восклицательный знаки, многоточие, Enter или произнесённый знак.
+                </p>
+            </div>
+        </section>
+
         <section class="ap-section" aria-labelledby="input-title">
             <div class="container">
                 <div class="ap-section-head">
@@ -264,10 +307,10 @@
                     <article class="ap-info-card">
                         <span class="ap-info-tag">Приватность</span>
                         <h3>Речь остаётся на компьютере</h3>
-                        <p>Scribe распознаёт голос локально с помощью Vosk. Аудио не уходит в облако, аккаунт не нужен — интернет понадобится только для скачивания языковых моделей.</p>
+                        <p>Scribe распознаёт голос локально с помощью Vosk. Аудио не уходит в облако, аккаунт не нужен — интернет понадобится только для скачивания языковых моделей и моделей пунктуации.</p>
                         <ul>
                             <li>Без аккаунта и облачной обработки</li>
-                            <li>Модели Vosk хранятся локально</li>
+                            <li>Модели Vosk и пунктуации хранятся локально</li>
                             <li>Открытый код можно проверить</li>
                         </ul>
                     </article>
@@ -298,13 +341,14 @@
                 <table class="ap-specs">
                     <caption class="visually-hidden">Характеристики Scribe</caption>
                     <tbody>
-                        <tr><th scope="row">Платформа</th><td>Windows 7 (64-bit) и новее</td></tr>
+                        <tr><th scope="row">Платформа</th><td>Windows 10 / 11 (64-bit)</td></tr>
+                        <tr><th scope="row">Windows 7</th><td>Не поддерживается с 1.3.0; последняя версия — 1.2.0</td></tr>
                         <tr><th scope="row">Linux</th><td>Версия 1.2+ с X11; Wayland не поддерживается</td></tr>
-                        <tr><th scope="row">Версия</th><td>1.3.0</td></tr>
+                        <tr><th scope="row">Версия</th><td>1.3.1</td></tr>
                         <tr><th scope="row">Лицензия</th><td>MIT</td></tr>
                         <tr><th scope="row">Дистрибутив</th><td>Scribe.exe, ≈ 93 МБ</td></tr>
                         <tr><th scope="row">Установка</th><td>Не требуется, портативная сборка</td></tr>
-                        <tr><th scope="row">Интернет</th><td>Для скачивания моделей Vosk</td></tr>
+                        <tr><th scope="row">Интернет</th><td>Для скачивания моделей Vosk и пунктуации</td></tr>
                         <tr><th scope="row">Исходники</th><td>github.com/AIgrator/Scribe</td></tr>
                     </tbody>
                 </table>
@@ -317,7 +361,7 @@
                     <div>
                         <p class="ap-cta-label">GitHub Releases</p>
                         <h2 id="cta-title">Скачайте Scribe</h2>
-                        <p>Windows 7+ · 64-bit · MIT · Без установки</p>
+                        <p>Windows 10 / 11 · 64-bit · MIT · Без установки</p>
                     </div>
                     <a class="btn btn-app" href="https://github.com/AIgrator/Scribe/releases/latest/download/Scribe.exe" rel="noopener" title="Скачать Scribe.exe для Windows">
                         <svg class="btn-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
