@@ -359,6 +359,21 @@
             font-size: 1.78rem; font-weight: 800;
             letter-spacing: -0.045em; line-height: 1.05;
         }
+        .product-name-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: inherit;
+            transition: color 0.2s;
+        }
+        .product-name-link svg {
+            width: 0.6em; height: 0.6em; flex-shrink: 0;
+            color: #b3ab9c;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .product-name-link:hover { color: var(--accent); }
+        .product-name-link:hover svg {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
         .badge {
             display: inline-flex; align-items: center;
             padding: 3px 8px;
@@ -840,7 +855,7 @@
                             <div>
                                 <p class="product-kicker">Голосовой ввод</p>
                                 <div class="product-name">
-                                    <h3 id="scribe-title">Scribe</h3>
+                                    <h3 id="scribe-title"><a class="product-name-link" href="scribe/index.html" title="Открыть Scribe">Scribe<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">MIT</span>
                                 </div>
                             </div>
@@ -894,7 +909,7 @@
                             <div>
                                 <p class="product-kicker">Очистка диска</p>
                                 <div class="product-name">
-                                    <h3 id="cleaner-title">ExtremeCleaner</h3>
+                                    <h3 id="cleaner-title"><a class="product-name-link" href="extremecleaner/index.html" title="Открыть ExtremeCleaner">ExtremeCleaner<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">MIT</span>
                                 </div>
                             </div>
@@ -948,7 +963,7 @@
                             <div>
                                 <p class="product-kicker">ИИ-ассистент</p>
                                 <div class="product-name">
-                                    <h3 id="logos-title">Logos</h3>
+                                    <h3 id="logos-title"><a class="product-name-link" href="logos/index.html" title="Открыть Logos">Logos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge badge-version">1.0.0</span>
                                     <span class="badge">MIT</span>
                                 </div>
@@ -1024,7 +1039,7 @@
                             <div>
                                 <p class="product-kicker">Android · Документы</p>
                                 <div class="product-name">
-                                    <h3 id="pdf-title">PDF Converter</h3>
+                                    <h3 id="pdf-title"><a class="product-name-link" href="pdf-converter/index.html" title="Открыть PDF Converter">PDF Converter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">Офлайн + онлайн</span>
                                 </div>
                             </div>
@@ -1080,7 +1095,7 @@
                             <div>
                                 <p class="product-kicker">Android · Видео</p>
                                 <div class="product-name">
-                                    <h3 id="video-title">Video Converter</h3>
+                                    <h3 id="video-title"><a class="product-name-link" href="video-converter/index.html" title="Открыть Video Converter">Video Converter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">Офлайн</span>
                                 </div>
                             </div>
@@ -1136,7 +1151,7 @@
                             <div>
                                 <p class="product-kicker">Android · Изображения</p>
                                 <div class="product-name">
-                                    <h3 id="image-title">Image Converter</h3>
+                                    <h3 id="image-title"><a class="product-name-link" href="image-converter/index.html" title="Открыть Image Converter">Image Converter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">Офлайн</span>
                                 </div>
                             </div>
@@ -1192,7 +1207,7 @@
                             <div>
                                 <p class="product-kicker">Android · Единицы измерения</p>
                                 <div class="product-name">
-                                    <h3 id="unit-title">Unit Converter</h3>
+                                    <h3 id="unit-title"><a class="product-name-link" href="unit-converter/index.html" title="Открыть Unit Converter">Unit Converter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">Офлайн</span>
                                 </div>
                             </div>
@@ -1248,7 +1263,7 @@
                             <div>
                                 <p class="product-kicker">Android · AR-измерения</p>
                                 <div class="product-name">
-                                    <h3 id="ar-title">AR Ruler</h3>
+                                    <h3 id="ar-title"><a class="product-name-link" href="ar-ruler/index.html" title="Открыть AR Ruler">AR Ruler<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></h3>
                                     <span class="badge">ARCore</span>
                                 </div>
                             </div>
