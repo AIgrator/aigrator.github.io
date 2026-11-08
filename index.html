@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
     <script src="assets/theme.js"></script>
     <script src="assets/i18n.js"></script>
+    <script src="assets/app-index.js" defer></script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141311'/%3E%3Cpath d='M18 46 30 16h6l12 30h-7l-2.4-6.5H27L24.5 46H18Zm11-12h7l-3.5-9.5L29 34Z' fill='%23f4f1ea'/%3E%3Ccircle cx='49' cy='15' r='5' fill='%23ff4d00'/%3E%3C/svg%3E">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -196,93 +197,145 @@
         .hero-fact.android svg { color: #067a46; }
         .fact-sep { color: #c5beaf; }
 
-        /* === HERO PROMISE === */
-        .promise {
+        /* === HERO APP INDEX === */
+        .app-index {
             position: relative;
             display: flex; flex-direction: column;
+            padding: 26px 24px 20px;
             border-radius: var(--radius);
-            padding: 30px 30px 28px;
             background: #121311;
             color: #f4f1ea;
             box-shadow: 0 34px 70px -38px rgba(20, 19, 17, 0.65);
             overflow: hidden;
         }
-        .promise::before {
+        .app-index::before {
             content: "";
             position: absolute; top: -120px; right: -110px;
             width: 300px; height: 300px;
             background: radial-gradient(circle, rgba(255, 77, 0, 0.22), transparent 66%);
             pointer-events: none;
         }
-        .promise-kicker {
+        .index-label {
             position: relative;
             display: flex; align-items: center; gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             font-family: var(--mono);
             font-size: 0.6rem; font-weight: 600;
             letter-spacing: 0.1em; text-transform: uppercase;
             color: #918c82;
         }
-        .promise-kicker::before {
+        .index-label::before {
             content: ""; width: 7px; height: 7px;
             border-radius: 2px; background: var(--orange);
             flex-shrink: 0;
         }
-        .promise-title {
+        .index-tabs {
             position: relative;
-            max-width: 360px;
-            margin-bottom: 14px;
-            font-size: clamp(1.7rem, 2.45vw, 2.1rem);
-            font-weight: 800;
-            line-height: 1.02;
-            letter-spacing: -0.045em;
+            display: flex; gap: 3px;
+            margin-bottom: 10px;
+            padding: 3px;
+            border-radius: 12px;
+            background: rgba(244, 241, 234, 0.06);
+            border: 1px solid rgba(244, 241, 234, 0.1);
         }
-        .promise-lead {
+        .index-tab {
+            flex: 1 1 0;
+            display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+            padding: 7px 10px;
+            border: 0; border-radius: 9px;
+            background: transparent;
+            color: #918c82;
+            font-family: inherit;
+            font-size: 0.79rem; font-weight: 700;
+            letter-spacing: -0.01em;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .index-tab:hover { color: #f4f1ea; }
+        .index-tab[aria-selected="true"] { background: #f4f1ea; color: #121311; }
+        .index-tab:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+        .index-tab-count {
+            min-width: 18px; padding: 1px 5px;
+            border-radius: 999px;
+            background: rgba(244, 241, 234, 0.12);
+            font-family: var(--mono);
+            font-size: 0.56rem; font-weight: 700;
+            line-height: 1.45;
+            text-align: center;
+        }
+        .index-tab[aria-selected="true"] .index-tab-count { background: rgba(20, 19, 17, 0.12); }
+        .index-panels { position: relative; display: grid; }
+        .index-panel {
+            grid-area: 1 / 1;
+            display: flex; flex-direction: column;
+        }
+        .index-panel[aria-hidden="true"] {
+            visibility: hidden;
+            pointer-events: none;
+        }
+        /* Windows has one row fewer: let its rows share the freed height. */
+        #panel-windows .index-list { flex: 1 1 auto; }
+        #panel-windows .index-item { flex: 1 1 0; }
+        .index-list {
             position: relative;
-            max-width: 380px;
-            margin-bottom: 26px;
-            color: #a39e94;
-            font-size: 0.9rem;
-            line-height: 1.55;
+            display: flex; flex-direction: column;
         }
-        .promise-grid {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin-top: auto;
-            padding-top: 22px;
-            border-top: 1px solid rgba(244, 241, 234, 0.12);
-        }
-        .promise-item {
-            display: flex; flex-direction: column; gap: 7px;
-            padding: 14px 14px 13px;
-            border-radius: 14px;
-            background: rgba(244, 241, 234, 0.04);
-            border: 1px solid rgba(244, 241, 234, 0.12);
+        .index-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 9px 10px;
+            border-radius: 13px;
+            border: 1px solid transparent;
             transition: background 0.2s, border-color 0.2s, transform 0.2s;
         }
-        .promise-item:hover {
-            background: rgba(244, 241, 234, 0.075);
-            border-color: rgba(244, 241, 234, 0.22);
-            transform: translateY(-1px);
+        .index-item:hover {
+            background: rgba(244, 241, 234, 0.06);
+            border-color: rgba(244, 241, 234, 0.14);
+            transform: translateX(2px);
         }
-        .promise-item-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-        .promise-platform {
-            display: inline-flex; align-items: center; gap: 6px;
+        .index-icon {
+            width: 42px; height: 42px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            padding: 5px;
+            border-radius: 11px;
+            background: rgba(244, 241, 234, 0.07);
+            border: 1px solid rgba(244, 241, 234, 0.12);
+        }
+        .index-icon img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .index-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+        .index-name {
+            font-size: 0.97rem; font-weight: 700;
+            letter-spacing: -0.02em; line-height: 1.2;
+            color: #f4f1ea;
+            transition: color 0.2s;
+        }
+        .index-meta {
+            font-family: var(--mono);
+            font-size: 0.55rem; font-weight: 600;
+            letter-spacing: 0.04em; text-transform: uppercase;
+            color: #8e8a81; line-height: 1.3;
+        }
+        .index-arrow {
+            width: 14px; height: 14px; flex-shrink: 0;
+            margin-left: auto;
+            color: #68645c;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .index-item:hover .index-name { color: var(--row-accent, #fff); }
+        .index-item:hover .index-arrow { color: var(--row-accent, #fff); transform: translateX(3px); }
+        .index-all {
+            display: flex; align-items: center; justify-content: space-between; gap: 8px;
+            margin-top: auto;
+            padding: 12px 10px 2px;
+            border-top: 1px solid rgba(244, 241, 234, 0.12);
             font-family: var(--mono);
             font-size: 0.56rem; font-weight: 600;
             letter-spacing: 0.07em; text-transform: uppercase;
-            color: #d7d2c8;
-        }
-        .promise-platform svg { width: 12px; height: 12px; color: #64b5f6; flex-shrink: 0; }
-        .promise-item.android .promise-platform svg { color: var(--android); }
-        .promise-arrow { width: 13px; height: 13px; color: #68645c; flex-shrink: 0; transition: transform 0.2s, color 0.2s; }
-        .promise-item:hover .promise-arrow { color: #fff; transform: translate(2px, -2px); }
-        .promise-fact {
-            font-size: 0.68rem; line-height: 1.4;
             color: #8e8a81;
+            transition: color 0.2s;
         }
+        .index-all svg { width: 12px; height: 12px; flex-shrink: 0; transition: transform 0.2s; }
+        .index-all:hover { color: #f4f1ea; }
+        .index-all:hover svg { transform: translateY(2px); }
 
         /* === SECTION HEAD === */
         .windows-section { padding: 0 0 20px; }
@@ -622,14 +675,14 @@
         /* === RESPONSIVE === */
         @media (max-width: 1080px) {
             .hero-grid { gap: 40px; }
-            .promise { padding: 26px 26px 24px; }
+            .app-index { padding: 22px 20px 16px; }
             .product { gap: 40px; }
         }
 
         @media (max-width: 980px) {
             .hero { padding: 60px 0 64px; }
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-            .promise { max-width: 680px; }
+            .app-index { max-width: 680px; }
             .android-head { flex-direction: column; align-items: flex-start; gap: 0; }
             .android-head .section-meta { margin-top: 12px; }
         }
@@ -657,7 +710,7 @@
 
             .hero { padding: 46px 0 50px; }
             .eyebrow { font-size: 0.58rem; margin-bottom: 18px; }
-            .hero h1 { font-size: clamp(2.35rem, 10vw, 3rem); margin-bottom: 20px; }
+            .hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); margin-bottom: 20px; }
             .hero-lead { font-size: 0.94rem; }
             .hero-actions .btn { flex: 1 1 auto; }
             .hero-facts { margin-top: 24px; font-size: 0.57rem; gap: 7px; }
@@ -670,14 +723,15 @@
             }
             .hero-facts .fact-sep { display: none; }
 
-            .promise { padding: 26px 22px 22px; }
-            .promise-kicker { font-size: 0.55rem; margin-bottom: 16px; }
-            .promise-title { font-size: clamp(1.6rem, 4.6vw, 1.85rem); margin-bottom: 12px; }
-            .promise-lead { font-size: 0.85rem; margin-bottom: 22px; }
-            .promise-grid { gap: 8px; padding-top: 18px; }
-            .promise-item { padding: 12px; border-radius: 12px; }
-            .promise-platform { font-size: 0.51rem; }
-            .promise-fact { font-size: 0.62rem; }
+            .app-index { padding: 20px 16px 14px; border-radius: 22px; }
+            .index-label { font-size: 0.55rem; margin-bottom: 8px; }
+            .index-item { gap: 10px; padding: 8px; border-radius: 12px; }
+            .index-icon { width: 36px; height: 36px; padding: 4px; border-radius: 9px; }
+            .index-name { font-size: 0.92rem; }
+            .index-meta { font-size: 0.5rem; }
+            .index-tab { font-size: 0.74rem; padding: 6px 8px; }
+            .index-tab-count { font-size: 0.54rem; }
+            .index-all { margin-top: 4px; padding: 10px 8px 2px; font-size: 0.51rem; }
 
             .section-head { align-items: flex-start; flex-direction: column; gap: 3px; padding: 42px 0 26px; }
             .section-meta { padding-bottom: 0; }
@@ -707,10 +761,11 @@
         }
 
         @media (max-width: 430px) {
-            .promise-grid { gap: 7px; }
-            .promise-item { padding: 11px; }
-            .promise-platform { font-size: 0.48rem; }
-            .promise-fact { font-size: 0.6rem; }
+            .hero-actions { flex-direction: column; align-items: stretch; }
+            .hero-actions .btn { width: 100%; }
+            .index-item { padding: 8px 6px; }
+            .index-meta { font-size: 0.47rem; }
+            .index-tab { gap: 5px; font-size: 0.71rem; }
 
             .product-actions { flex-direction: column; align-items: stretch; gap: 4px; }
             .product-actions .btn { width: 100%; }
@@ -775,11 +830,11 @@
             <div class="container hero-grid">
                 <div class="hero-copy">
                     <p class="eyebrow">Независимая разработка · Windows и Android</p>
-                    <h1 id="hero-title">Три приложения<br>для Windows.</h1>
-                    <p class="hero-lead">Scribe, ExtremeCleaner и Logos решают конкретные задачи: голосовой ввод, порядок на диске и работа с ИИ. Бесплатно, без подписок.</p>
+                    <h1 id="hero-title">Восемь приложений<br>для Windows и Android.</h1>
+                    <p class="hero-lead">Бесплатно, без подписок и регистрации. Scribe превращает речь в текст, ExtremeCleaner освобождает диск, Logos выполняет задачи в ИИ-чате. Ещё пять конвертеров и утилит — для Android.</p>
                     <div class="hero-actions">
                         <a class="btn btn-dark" href="#windows">
-                            Смотреть программы
+                            Выбрать приложение
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16"/><path d="m6 14 6 6 6-6"/></svg>
                         </a>
                         <a class="btn btn-outline" href="https://github.com/AIgrator" target="_blank" rel="noopener">
@@ -797,40 +852,115 @@
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.2 9.2h11.6c.6 0 1.1.5 1.1 1.1v6.2c0 .6-.5 1.1-1.1 1.1H6.2c-.6 0-1.1-.5-1.1-1.1v-6.2c0-.6.5-1.1 1.1-1.1Zm.1-3.4 1-1.8a.4.4 0 0 1 .7.4l-.9 1.6a5.9 5.9 0 0 1 5.8 0l-.9-1.6a.4.4 0 1 1 .7-.4l1 1.8A6.4 6.4 0 0 1 17.4 9H6.6a6.4 6.4 0 0 1 3.3-2.9l-.4-.3ZM9 7.2a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Zm6 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Z"/><path d="M3.2 10.1c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0v-4.6c0-.6.4-1 1-1Zm17.6 0c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0v-4.6c0-.6.4-1 1-1ZM7 18.2h10v2.3a1 1 0 1 1-2 0v-2.3h-1.5v2.3a1 1 0 1 1-2 0v-2.3h-1v2.3a1 1 0 1 1-2 0v-2.3H7Z"/></svg>
                             Android
                         </span>
-                        <span class="fact-sep">/</span>
-                        <span class="hero-fact">Бесплатно</span>
                     </div>
                 </div>
 
-                <aside class="promise" aria-labelledby="promise-title">
-                    <p class="promise-kicker">AIgrator · принципы</p>
-                    <h2 class="promise-title" id="promise-title">Бесплатно и без ограничений.</h2>
-                    <p class="promise-lead">Готовые программы можно скачать и использовать без подписок и пробных периодов.</p>
+                <section class="app-index" aria-labelledby="app-index-label" data-app-index>
+                    <p class="index-label" id="app-index-label">Выберите приложение</p>
 
-                    <div class="promise-grid">
-                        <a class="promise-item" href="https://github.com/AIgrator" target="_blank" rel="noopener" title="Исходный код приложений AIgrator на GitHub">
-                            <span class="promise-item-head">
-                                <span class="promise-platform">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
-                                    Windows
-                                </span>
-                                <svg class="promise-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-                            </span>
-                            <span class="promise-fact">Открытый исходный код</span>
-                        </a>
-
-                        <a class="promise-item android" href="https://play.google.com/store/apps/developer?id=AIgrator" target="_blank" rel="noopener" title="Приложения AIgrator в Google Play">
-                            <span class="promise-item-head">
-                                <span class="promise-platform">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.2 9.2h11.6c.6 0 1.1.5 1.1 1.1v6.2c0 .6-.5 1.1-1.1 1.1H6.2c-.6 0-1.1-.5-1.1-1.1v-6.2c0-.6.5-1.1 1.1-1.1Zm.1-3.4 1-1.8a.4.4 0 0 1 .7.4l-.9 1.6a5.9 5.9 0 0 1 5.8 0l-.9-1.6a.4.4 0 1 1 .7-.4l1 1.8A6.4 6.4 0 0 1 17.4 9H6.6a6.4 6.4 0 0 1 3.3-2.9l-.4-.3ZM9 7.2a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Zm6 0a.7.7 0 1 0 0 1.4.7.7 0 0 0 0-1.4Z"/><path d="M3.2 10.1c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0v-4.6c0-.6.4-1 1-1Zm17.6 0c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0v-4.6c0-.6.4-1 1-1ZM7 18.2h10v2.3a1 1 0 1 1-2 0v-2.3h-1.5v2.3a1 1 0 1 1-2 0v-2.3h-1v2.3a1 1 0 1 1-2 0v-2.3H7Z"/></svg>
-                                    Android
-                                </span>
-                                <svg class="promise-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-                            </span>
-                            <span class="promise-fact">Без регистрации и лимитов</span>
-                        </a>
+                    <div class="index-tabs" role="tablist" aria-label="Платформа">
+                        <button class="index-tab" type="button" role="tab" id="tab-windows" aria-controls="panel-windows" aria-selected="true" tabindex="0">
+                            Windows
+                            <span class="index-tab-count">3</span>
+                        </button>
+                        <button class="index-tab" type="button" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="false" tabindex="-1">
+                            Android
+                            <span class="index-tab-count">5</span>
+                        </button>
                     </div>
-                </aside>
+
+                    <div class="index-panels">
+                        <div class="index-panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows">
+                            <div class="index-list">
+                                <a class="index-item" href="scribe/index.html" title="Открыть Scribe" style="--row-accent: #c4b5fd;">
+                                    <span class="index-icon"><img src="assets/icons/scribe.png" alt="" width="128" height="128"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">Scribe</span>
+                                        <span class="index-meta">Голосовой ввод · Windows 7–11</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+
+                                <a class="index-item" href="extremecleaner/index.html" title="Открыть ExtremeCleaner" style="--row-accent: #f2c14e;">
+                                    <span class="index-icon"><img src="assets/icons/extremecleaner.png" alt="" width="256" height="243"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">ExtremeCleaner</span>
+                                        <span class="index-meta">Очистка диска · Windows 10/11</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+
+                                <a class="index-item" href="logos/index.html" title="Открыть Logos" style="--row-accent: #67d4e8;">
+                                    <span class="index-icon"><img src="assets/icons/logos.png" alt="" width="256" height="256"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">Logos</span>
+                                        <span class="index-meta">ИИ-ассистент · Windows 10/11, Linux</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+                            </div>
+
+                            <a class="index-all" href="#windows">
+                                Все программы для Windows
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m5 12 7 7 7-7"/></svg>
+                            </a>
+                        </div>
+
+                        <div class="index-panel" id="panel-android" role="tabpanel" aria-labelledby="tab-android" aria-hidden="true">
+                            <div class="index-list">
+                                <a class="index-item" href="pdf-converter/index.html" title="Открыть PDF Converter" style="--row-accent: #f28b82;">
+                                    <span class="index-icon"><img src="assets/icons/android/pdf-converter.png" alt="" width="128" height="128" loading="lazy"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">PDF Converter</span>
+                                        <span class="index-meta">Документы · Android</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+
+                                <a class="index-item" href="video-converter/index.html" title="Открыть Video Converter" style="--row-accent: #ffb08a;">
+                                    <span class="index-icon"><img src="assets/icons/android/video-converter.png" alt="" width="128" height="128" loading="lazy"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">Video Converter</span>
+                                        <span class="index-meta">Видео · Android</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+
+                                <a class="index-item" href="image-converter/index.html" title="Открыть Image Converter" style="--row-accent: #c4b5fd;">
+                                    <span class="index-icon"><img src="assets/icons/android/image-converter.png" alt="" width="128" height="128" loading="lazy"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">Image Converter</span>
+                                        <span class="index-meta">Изображения · Android</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+
+                                <a class="index-item" href="unit-converter/index.html" title="Открыть Unit Converter" style="--row-accent: #f2c14e;">
+                                    <span class="index-icon"><img src="assets/icons/android/unit-converter.png" alt="" width="128" height="128" loading="lazy"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">Unit Converter</span>
+                                        <span class="index-meta">Единицы измерения · Android</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+
+                                <a class="index-item" href="ar-ruler/index.html" title="Открыть AR Ruler" style="--row-accent: #67d4e8;">
+                                    <span class="index-icon"><img src="assets/icons/android/ar-ruler.png" alt="" width="128" height="128" loading="lazy"></span>
+                                    <span class="index-text">
+                                        <span class="index-name">AR Ruler</span>
+                                        <span class="index-meta">AR-измерения · Android</span>
+                                    </span>
+                                    <svg class="index-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                                </a>
+                            </div>
+
+                            <a class="index-all" href="#android">
+                                Все приложения для Android
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m5 12 7 7 7-7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
 

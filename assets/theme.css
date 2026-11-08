@@ -72,7 +72,7 @@ body:has(.ap-hero)::before {
 .hero-fact.android svg { color: light-dark(#067a46, #3ddc84); }
 .fact-sep { color: light-dark(#c5beaf, #4a463f); }
 
-.promise { background: light-dark(#121311, #1b1916); }
+.app-index { background: light-dark(#121311, #1b1916); }
 
 /* === INDEX: PRODUCTS === */
 
