@@ -211,6 +211,22 @@ body:has(.ap-hero)::before {
 
 .ap-info-card:not(.ap-info-dark) li { color: var(--body-strong); }
 
+.ap-method li { color: var(--body-strong); }
+
+.ap-alert {
+    background: light-dark(#fffaec, #211b10);
+    border-color: light-dark(#ecd9a8, #4a3b1c);
+}
+.ap-alert-icon { background: light-dark(#fdf0cd, #3a2c12); }
+.ap-alert-icon svg { stroke: light-dark(#a16207, #fbbf24); }
+.ap-alert-kicker { color: light-dark(#a16207, #fbbf24); }
+.ap-alert p { color: light-dark(#5d4a28, #d6c9b0); }
+.ap-alert-link {
+    color: light-dark(#8a5a00, #fbbf24);
+    border-bottom-color: light-dark(rgba(161, 98, 7, 0.35), rgba(251, 191, 36, 0.35));
+}
+.ap-alert-link:hover { border-bottom-color: light-dark(#8a5a00, #fbbf24); }
+
 .ap-cta-inner { background: light-dark(#121311, #1b1916); }
 
 .ap-specs td { color: var(--body-strong); }
