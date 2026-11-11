@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scribe — офлайн-диктовка и голосовые команды для Windows | AIgrator</title>
-    <meta name="description" content="Scribe для Windows 10/11: офлайн-распознавание речи Vosk, автоматическая пунктуация и заглавные буквы, голосовые команды, замены и горячие клавиши. Портативный exe, бесплатно, MIT.">
+    <meta name="description" content="Scribe для Windows 10/11: офлайн-распознавание речи Vosk, автоматическая пунктуация и заглавные буквы, голосовые команды, замены и горячие клавиши. Установщик и портативный exe, бесплатно, MIT.">
     <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
     <script src="../assets/theme.js"></script>
@@ -73,21 +73,20 @@
                         <p class="ap-desc">Scribe превращает компьютер в устройство с голосовым управлением: диктуйте текст в любое приложение, запускайте программы и автоматизируйте рутину. Распознавание Vosk работает офлайн, без отправки речи в облако.</p>
                         <ul class="ap-facts">
                             <li class="fact-platform"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>Windows 10 / 11 (64-bit)</li>
-                            <li>Версия 1.3.1</li>
                             <li class="fact-offline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>Офлайн</li>
                             <li>MIT</li>
                         </ul>
                         <div class="ap-actions">
-                            <a class="btn btn-app" href="https://github.com/AIgrator/Scribe/releases/latest/download/Scribe.exe" rel="noopener" title="Скачать Scribe.exe для Windows">
+                            <a class="btn btn-app" href="https://github.com/AIgrator/Scribe/releases/latest" target="_blank" rel="noopener" title="Скачать Scribe для Windows">
                                 <svg class="btn-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-                                Скачать Scribe.exe
+                                Скачать для Windows
                             </a>
                             <a class="btn-text" href="https://github.com/AIgrator/Scribe" target="_blank" rel="noopener" title="Исходники и релизы Scribe на GitHub">
                                 Исходники и релизы
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                             </a>
                         </div>
-                        <p class="ap-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Портативная сборка ≈ 93 МБ: установка не требуется. Языковые модели Vosk и модели пунктуации скачиваются отдельно.</p>
+                        <p class="ap-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Установщик ставится без прав администратора; портативный Scribe.exe работает без установки. Настройки и модели в обоих случаях лежат в %LOCALAPPDATA%\Scribe.</p>
                     </div>
 
                     <figure class="ap-hero-visual">
@@ -189,7 +188,7 @@
                     </div>
                     <p class="ap-section-side">Три шага</p>
                 </div>
-                <p class="ap-section-lead">Scribe не требует установки: запустите exe, и мастер первого запуска проведёт вас по настройке.</p>
+                <p class="ap-section-lead">Установите Scribe или запустите портативный Scribe.exe — мастер первого запуска проведёт вас по настройке.</p>
                 <div class="ap-steps">
                     <article class="ap-step">
                         <span class="ap-step-num">01</span>
@@ -199,7 +198,7 @@
                     <article class="ap-step">
                         <span class="ap-step-num">02</span>
                         <h3>Скачайте модель распознавания</h3>
-                        <p>Укажите язык, который будете диктовать. Для старта подойдёт лёгкая модель Vosk на 40–100 МБ — она скачивается быстро. Точные модели на 1–2 ГБ можно загрузить позже в настройках.</p>
+                        <p>Укажите язык, который будете диктовать. Для старта подойдёт лёгкая модель Vosk на 40–100 МБ — она скачивается быстро. Модель пунктуации для русского или английского загрузится автоматически. Точные модели на 1–2 ГБ можно загрузить позже в настройках.</p>
                     </article>
                     <article class="ap-step">
                         <span class="ap-step-num">03</span>
@@ -207,6 +206,44 @@
                         <p>Выберите микрофон в главном окне и нажмите «Транскрипция». Поставьте курсор в текстовое поле любого приложения — распознанные слова появятся там.</p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section class="ap-section" aria-labelledby="install-title">
+            <div class="container">
+                <div class="ap-section-head">
+                    <div>
+                        <p class="ap-section-label">Установка</p>
+                        <h2 id="install-title">Установщик, данные и автозапуск</h2>
+                    </div>
+                    <p class="ap-section-side">Без прав администратора</p>
+                </div>
+                <div class="ap-info-grid">
+                    <article class="ap-info-card">
+                        <span class="ap-info-tag">Установка</span>
+                        <h3>Установщик или один exe</h3>
+                        <p>ScribeSetup.exe ставит программу в папку пользователя, добавляет ярлык в «Пуск» и штатный деинсталлятор. Scribe.exe запускается без установки — обе сборки используют одни и те же настройки и модели.</p>
+                        <ul>
+                            <li>Установка в %LOCALAPPDATA%\Programs\Scribe без прав администратора</li>
+                            <li>Ярлык в меню «Пуск» и удаление через «Установленные приложения»</li>
+                            <li>Вкладка «Система»: загрузка CPU, язык интерфейса, запись, журнал и автозапуск</li>
+                        </ul>
+                    </article>
+                    <article class="ap-info-card ap-info-dark">
+                        <span class="ap-info-tag">Данные</span>
+                        <h3>Одна папка для всех сборок</h3>
+                        <p>Настройки, модели и записи хранятся в %LOCALAPPDATA%\Scribe независимо от того, откуда запущен Scribe.exe. Чтобы перенести программу на другой компьютер, скопируйте эту папку.</p>
+                        <ul>
+                            <li>settings.json — язык, модель, горячие клавиши, замены</li>
+                            <li>models\ — модели Vosk и пунктуации</li>
+                            <li>records\ и app.log — сохранённые расшифровки и журнал</li>
+                        </ul>
+                    </article>
+                </div>
+                <p class="ap-methods-note">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+                    Автозапуск включается галочкой «Запускать Scribe при входе в систему» и отражает реальное состояние Windows. Старая портативная сборка хранила данные рядом с Scribe.exe — при первом запуске Scribe переносит их в %LOCALAPPDATA%\Scribe автоматически. Деинсталлятор закрывает запущенный Scribe и удаляет папку данных целиком, включая модели: сохраните models\, если они понадобятся снова.
+                </p>
             </div>
         </section>
 
@@ -317,10 +354,10 @@
                     <article class="ap-info-card ap-info-dark">
                         <span class="ap-info-tag">Лицензия</span>
                         <h3>MIT и открытые исходники</h3>
-                        <p>Код, сборка и релизы доступны на GitHub. Можно скачать готовый Scribe.exe или собрать приложение самостоятельно.</p>
+                        <p>Код, сборка и релизы доступны на GitHub. Можно скачать установщик или портативный Scribe.exe — либо собрать приложение самостоятельно.</p>
                         <ul>
                             <li>Свободная лицензия MIT</li>
-                            <li>Портативный exe без установки</li>
+                            <li>Установщик и портативный exe</li>
                             <li>Зеркало релизов на SourceForge</li>
                         </ul>
                     </article>
@@ -344,10 +381,11 @@
                         <tr><th scope="row">Платформа</th><td>Windows 10 / 11 (64-bit)</td></tr>
                         <tr><th scope="row">Windows 7</th><td>Не поддерживается с 1.3.0; последняя версия — 1.2.0</td></tr>
                         <tr><th scope="row">Linux</th><td>Версия 1.2+ с X11; Wayland не поддерживается</td></tr>
-                        <tr><th scope="row">Версия</th><td>1.3.1</td></tr>
                         <tr><th scope="row">Лицензия</th><td>MIT</td></tr>
-                        <tr><th scope="row">Дистрибутив</th><td>Scribe.exe, ≈ 93 МБ</td></tr>
-                        <tr><th scope="row">Установка</th><td>Не требуется, портативная сборка</td></tr>
+                        <tr><th scope="row">Загрузка</th><td>GitHub Releases и SourceForge</td></tr>
+                        <tr><th scope="row">Установка</th><td>Установщик — в папку пользователя, без прав администратора; портативный exe — без установки</td></tr>
+                        <tr><th scope="row">Данные</th><td>%LOCALAPPDATA%\Scribe: настройки, модели, записи, журнал</td></tr>
+                        <tr><th scope="row">Автозапуск</th><td>По желанию, на вкладке «Система»</td></tr>
                         <tr><th scope="row">Интернет</th><td>Для скачивания моделей Vosk и пунктуации</td></tr>
                         <tr><th scope="row">Исходники</th><td>github.com/AIgrator/Scribe</td></tr>
                     </tbody>
@@ -361,11 +399,11 @@
                     <div>
                         <p class="ap-cta-label">GitHub Releases</p>
                         <h2 id="cta-title">Скачайте Scribe</h2>
-                        <p>Windows 10 / 11 · 64-bit · MIT · Без установки</p>
+                        <p>Windows 10 / 11 · 64-bit · MIT · GitHub Releases и SourceForge</p>
                     </div>
-                    <a class="btn btn-app" href="https://github.com/AIgrator/Scribe/releases/latest/download/Scribe.exe" rel="noopener" title="Скачать Scribe.exe для Windows">
+                    <a class="btn btn-app" href="https://github.com/AIgrator/Scribe/releases/latest" target="_blank" rel="noopener" title="Скачать Scribe для Windows">
                         <svg class="btn-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-                        Скачать Scribe.exe
+                        Скачать для Windows
                     </a>
                 </div>
             </div>
